@@ -21,11 +21,17 @@ npm run start
 
 # 预打包-不生产安装包
 
+需要修改 package.json 中的作者信息 以及 build 中的 appid 等等
+替换 electron/assets/logo.ico 为自己的 logo
+
 ```
 npm run dist
 ```
 
 # 打包生成安装包
+
+需要修改 package.json 中的作者信息 以及 build 中的 appid 等等
+替换 electron/assets/logo.ico 为自己的 logo
 
 ```
 npm run build
