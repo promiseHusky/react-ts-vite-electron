@@ -1,0 +1,74 @@
+{
+  "name": "cloud-tap",
+  "private": true,
+  "version": "0.0.0",
+  "main": "main.js",
+  "description": "a test app",
+  "author": {
+    "email": "dmhqs@qq.com",
+    "name": "hsqa"
+  },
+  "build": {
+    "appId": "dmhsq-dmhsq-dmhsq",
+    "productName": "hsq",
+    "copyright": "Copyright © 2019 ${author}",
+    "files": [
+      "build/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "./build/"
+    },
+    "extraMetadata": {
+      "main": "./build/main.js"
+    },
+    "extends": null,
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ],
+      "icon": "./build/logo.ico",
+      "artifactName": "${productName}-Web-Setup-${version}.${ext}",
+      "publisherName": "hsq"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false,
+      "installerIcon": "./build/logo.ico"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "builds": "tsc && vite build",
+    "preview": "vite preview",
+    "eleMain": "webpack",
+    "start": "concurrently \"electron ./electron/main.js\" \"cross-env BROWSER=none vite\"",
+    "dist": "electron-builder --dir",
+    "build": "electron-builder",
+    "prebuild": "npm run eleMain",
+    "predist": "npm run eleMain",
+    "preeleMain": "npm run builds"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "concurrently": "^7.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "cross-env": "^7.0.3",
+    "electron": "^17.1.2",
+    "electron-builder": "^22.14.13",
+    "electron-is-dev": "^2.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "wait-on": "^6.0.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
